@@ -5,8 +5,8 @@
     <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:rowCount="5"
-            android:columnCount="4">
+            android:rowCount="6"
+            android:columnCount="2">
         <TextView
                 android:layout_column="0"
                 android:layout_row="0"
@@ -15,15 +15,14 @@
                 android:layout_columnWeight="1"
                 android:gravity="start"
                 android:textSize="16sp"
-                android:text="来源:"/>
+                android:text="账号来源:"/>
         <TextView
                 android:layout_column="1"
                 android:layout_row="0"
-                android:layout_columnSpan="3"
                 android:id="@+id/iteam_source"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
+                android:layout_columnWeight="4"
                 android:gravity="start"
                 android:textSize="16sp"
                 android:text=""/>
@@ -35,15 +34,14 @@
                 android:layout_columnWeight="1"
                 android:gravity="start"
                 android:textSize="16sp"
-                android:text="账户:"/>
+                android:text="用户名称:"/>
         <TextView
                 android:layout_column="1"
                 android:layout_row="1"
-                android:layout_columnSpan="3"
                 android:id="@+id/iteam_user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
+                android:layout_columnWeight="4"
                 android:gravity="start"
                 android:textSize="16sp"
                 android:text=""/>
@@ -55,15 +53,14 @@
                 android:layout_columnWeight="1"
                 android:gravity="start"
                 android:textSize="16sp"
-                android:text="密码:"/>
+                android:text="用户密码:"/>
         <TextView
                 android:id="@+id/iteam_user_password"
-                android:layout_column="0"
+                android:layout_column="1"
                 android:layout_row="2"
-                android:layout_columnSpan="3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
+                android:layout_columnWeight="4"
                 android:gravity="start"
                 android:textSize="16sp"
                 android:text=""/>
@@ -82,26 +79,7 @@
                 android:layout_row="3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:gravity="start"
-                android:textSize="16sp"
-                android:text=""/>
-        <TextView
-                android:layout_column="2"
-                android:layout_row="3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:gravity="start"
-                android:textSize="16sp"
-                android:text="修改日期:"/>
-        <TextView
-                android:id="@+id/iteam_mod_time"
-                android:layout_column="3"
-                android:layout_row="3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
+                android:layout_columnWeight="4"
                 android:gravity="start"
                 android:textSize="16sp"
                 android:text=""/>
@@ -113,15 +91,33 @@
                 android:layout_columnWeight="1"
                 android:gravity="start"
                 android:textSize="16sp"
-                android:text="备注:"/>
+                android:text="修改日期:"/>
         <TextView
-                android:id="@+id/iteam_remarks"
+                android:id="@+id/iteam_mod_time"
                 android:layout_column="1"
                 android:layout_row="4"
-                android:layout_columnSpan="3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="4"
+                android:gravity="start"
+                android:textSize="16sp"
+                android:text=""/>
+        <TextView
+                android:layout_column="0"
+                android:layout_row="5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
+                android:gravity="start"
+                android:textSize="16sp"
+                android:text="账号备注:"/>
+        <TextView
+                android:id="@+id/iteam_remarks"
+                android:layout_column="1"
+                android:layout_row="5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="4"
                 android:gravity="start"
                 android:textSize="16sp"
                 android:text=""/>

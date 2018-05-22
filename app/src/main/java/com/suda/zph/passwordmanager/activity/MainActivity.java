@@ -2,7 +2,6 @@ package com.suda.zph.passwordmanager.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -40,6 +39,12 @@ public class MainActivity extends Activity {
     public boolean login(String passWord){
         IUser iUser = new IUser();
         return iUser.findUser(MainActivity.this, passWord);
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        this.finish();
+
     }
 }
 

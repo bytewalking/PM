@@ -14,7 +14,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 import com.suda.zph.passwordmanager.R;
 import com.suda.zph.passwordmanager.adapter.PassWordListAdapter;
-import com.suda.zph.passwordmanager.database.PassWordOpenHelper;
 import com.suda.zph.passwordmanager.database.databaseImp.IPassWord;
 import com.suda.zph.passwordmanager.entity.PassWord;
 
@@ -56,15 +55,16 @@ public class HomeActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(HomeActivity.this,AddPassWordActivity.class);
+                startActivity(intent);
+                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+
             }
         });
 
         lists = new IPassWord().findAll(HomeActivity.this);
         PassWordListAdapter passWordListAdapter = new PassWordListAdapter(lists,HomeActivity.this);
         lv.setAdapter(passWordListAdapter);
-
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -77,6 +77,15 @@ public class HomeActivity extends AppCompatActivity {
                 HomeActivity.this.startActivity(intent);
             }
         });
+
+        Intent intent = getIntent();
+        String msg = (String)intent.getSerializableExtra("msg");
+        if(intent.getSerializableExtra("msg")==null){
+
+        }else {
+            View view = getWindow().getDecorView();
+            Snackbar.make(view, "add success!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+        }
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

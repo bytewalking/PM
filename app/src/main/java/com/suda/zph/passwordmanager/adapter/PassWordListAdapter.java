@@ -42,7 +42,7 @@ public class PassWordListAdapter extends BaseAdapter {
         if(view == null) {
             viewHolder = new ViewHolder();
             v = LayoutInflater.from(context).inflate(R.layout.iteam_layout, null);
-            viewHolder.tvSource = v.findViewById(R.id.iteam_user_name);
+            viewHolder.tvSource = v.findViewById(R.id.iteam_source);
             viewHolder.tvUserName = v.findViewById(R.id.iteam_user_name);
             viewHolder.tvPassword = v.findViewById(R.id.iteam_user_password);
             viewHolder.tvCreateTime = v.findViewById(R.id.iteam_create_time);

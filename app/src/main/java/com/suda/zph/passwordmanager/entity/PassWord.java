@@ -10,6 +10,13 @@ public class PassWord {
     private int delete_flag;
     private String remarks;
 
+    public PassWord(String source, String user_name, String user_password, String remarks) {
+        this.source = source;
+        this.user_name = user_name;
+        this.user_password = user_password;
+        this.remarks = remarks;
+    }
+
     public PassWord(int id, String source, String user_name, String user_password, String create_time, String mod_time, int delete_flag, String remarks) {
         this.id = id;
         this.source = source;

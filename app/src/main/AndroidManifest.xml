@@ -21,9 +21,11 @@
                 android:label="@string/title_activity_home"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".activity.ChooseActivity">
+        <activity android:name=".activity.ChooseActivity"
+                  android:theme="@style/Theme.AppCompat.Light.Dialog.MinWidth">
         </activity>
-        <activity android:name=".activity.AddPassWordActivity">
+        <activity android:name=".activity.AddPassWordActivity"
+                  android:theme="@style/Theme.AppCompat.Light.Dialog.MinWidth">
         </activity>
     </application>
 
