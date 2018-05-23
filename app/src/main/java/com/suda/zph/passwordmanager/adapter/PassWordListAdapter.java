@@ -53,10 +53,9 @@ public class PassWordListAdapter extends BaseAdapter {
             v = view;
             viewHolder = (ViewHolder) v.getTag();
         }
-
         viewHolder.tvSource.setText(passWord.getSource());
         viewHolder.tvUserName.setText(passWord.getUser_name());
-        viewHolder.tvPassword.setText(passWord.getUser_password());
+        viewHolder.tvPassword.setText("*********");
         viewHolder.tvCreateTime.setText(passWord.getCreate_time());
         viewHolder.tvModTime.setText(passWord.getMod_time());
         viewHolder.tvRemarks.setText(passWord.getRemarks());

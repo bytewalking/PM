@@ -8,6 +8,11 @@
         android:gravity="center"
         tools:context="com.suda.zph.passwordmanager.activity.ChooseActivity">
     <Button
+            android:id="@+id/cho_select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="查看密码"/>
+    <Button
             android:id="@+id/cho_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

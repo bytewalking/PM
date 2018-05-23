@@ -9,7 +9,7 @@ import com.suda.zph.passwordmanager.R;
 import com.suda.zph.passwordmanager.database.databaseImp.IPassWord;
 
 public class ChooseActivity extends AppCompatActivity {
-    private Button upDateBut,deleteBut;
+    private Button upDateBut,deleteBut,selectBut;
     private int id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +17,7 @@ public class ChooseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_choose);
         upDateBut = findViewById(R.id.cho_update);
         deleteBut = findViewById(R.id.ch_delete);
+        selectBut = findViewById(R.id.cho_select);
 
         Intent intent = getIntent();
         id = (int) intent.getSerializableExtra("id");
@@ -40,6 +41,17 @@ public class ChooseActivity extends AppCompatActivity {
                 //传值
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("msg","delete success!");
+                intent.putExtras(bundle);
+                ChooseActivity.this.startActivity(intent);
+            }
+        });
+        selectBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ChooseActivity.this,ShowPasswordActivity.class);
+                //传值
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("chid",id);
                 intent.putExtras(bundle);
                 ChooseActivity.this.startActivity(intent);
             }

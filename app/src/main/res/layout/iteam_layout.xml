@@ -14,7 +14,7 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 android:gravity="start"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:text="账号来源:"/>
         <TextView
                 android:layout_column="1"
@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="4"
                 android:gravity="start"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:text=""/>
         <TextView
                 android:layout_column="0"
@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 android:gravity="start"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:text="用户名称:"/>
         <TextView
                 android:layout_column="1"
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="4"
                 android:gravity="start"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:text=""/>
         <TextView
                 android:layout_column="0"
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 android:gravity="start"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:text="用户密码:"/>
         <TextView
                 android:id="@+id/iteam_user_password"
@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="4"
                 android:gravity="start"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:text=""/>
         <TextView
                 android:layout_column="0"

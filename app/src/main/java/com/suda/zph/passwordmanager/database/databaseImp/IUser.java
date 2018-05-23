@@ -2,7 +2,6 @@ package com.suda.zph.passwordmanager.database.databaseImp;
 
 import android.content.Context;
 import android.database.Cursor;
-import com.suda.zph.passwordmanager.activity.MainActivity;
 import com.suda.zph.passwordmanager.database.MyOpenHelper;
 
 public class IUser {
