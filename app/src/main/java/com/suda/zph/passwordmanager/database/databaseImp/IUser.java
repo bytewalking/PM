@@ -15,4 +15,11 @@ public class IUser {
         if(cursor.moveToNext())return true;
         else return false;
     }
+
+    public Boolean modUser(Context context,String passWord){
+        String sql = "update user set password = ? where user_id=1000";
+        helper = new MyOpenHelper(context,"user.db3",1);
+        helper.getReadableDatabase().execSQL(sql,new String[]{passWord});
+        return true;
+    }
 }

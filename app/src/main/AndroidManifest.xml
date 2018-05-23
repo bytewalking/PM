@@ -9,7 +9,9 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+        <activity
+                android:name=".activity.MainActivity"
+                android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -21,11 +23,15 @@
                 android:label="@string/title_activity_home"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".activity.ChooseActivity"
-                  android:theme="@style/Theme.AppCompat.Light.Dialog.MinWidth">
+        <activity
+                android:name=".activity.ChooseActivity"
+                android:theme="@style/Theme.AppCompat.Light.Dialog.MinWidth">
         </activity>
-        <activity android:name=".activity.AddPassWordActivity"
-                  android:theme="@style/Theme.AppCompat.Light.Dialog.MinWidth">
+        <activity
+                android:name=".activity.AddPassWordActivity"
+                android:theme="@style/Theme.AppCompat.Light.Dialog.MinWidth">
+        </activity>
+        <activity android:name=".activity.ModUserActivity">
         </activity>
     </application>
 

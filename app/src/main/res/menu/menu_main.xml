@@ -12,7 +12,7 @@
     <item
             android:id="@+id/menu_setting"
             android:icon="@drawable/pic_setting"
-            android:title="设置"
+            android:title="修改密码"
             app:showAsAction="never"/>
 
 </menu>

@@ -40,7 +40,8 @@ public class HomeActivity extends AppCompatActivity {
                         msg += "Click search";
                         break;
                     case R.id.menu_setting:
-                        msg += "Click setting";
+                        Intent intent = new Intent(HomeActivity.this,ModUserActivity.class);
+                        startActivity(intent);
                         break;
                 }
                 if(!msg.equals("")) {
