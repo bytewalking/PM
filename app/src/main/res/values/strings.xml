@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PasswordManager</string>
+    <string name="app_name">Password Manager</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_activity_settings">Settings</string>
 

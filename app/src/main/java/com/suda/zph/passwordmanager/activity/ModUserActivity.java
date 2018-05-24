@@ -30,6 +30,7 @@ public class ModUserActivity extends AppCompatActivity {
                 if(pas1.equals(pas2)){
                     new IUser().modUser(ModUserActivity.this,pas1);
                     Intent intent = new Intent(ModUserActivity.this,HomeActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     //传值
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("msg","修改成功!");

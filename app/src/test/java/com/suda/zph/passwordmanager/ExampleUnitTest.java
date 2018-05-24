@@ -1,25 +1,21 @@
 package com.suda.zph.passwordmanager;
 
+import com.suda.zph.passwordmanager.security.AES;
 import org.junit.Test;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import static org.junit.Assert.*;
 
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
         assertEquals(4, 2 + 2);
     }
     @Test
-    public void test(){
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        System.out.println(df.format(System.currentTimeMillis()));
+    public void testFind(){
+        String temp = new AES().AESencryption("1266sd342fsdf332dsfa312sdfgsdfg3123sdfsd232sdf4141414");
+        System.out.println("temp:"+temp);
+
+        String pass = new AES().AESdecode(temp);
+        System.out.println("pass:"+pass);
     }
 }

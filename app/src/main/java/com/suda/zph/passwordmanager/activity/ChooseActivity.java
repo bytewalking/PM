@@ -38,6 +38,7 @@ public class ChooseActivity extends AppCompatActivity {
             public void onClick(View view) {
                 new IPassWord().deletePassWord(ChooseActivity.this,id);
                 Intent intent = new Intent(ChooseActivity.this,HomeActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 //传值
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("msg","delete success!");

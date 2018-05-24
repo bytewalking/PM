@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.Cursor;
 import com.suda.zph.passwordmanager.database.PassWordOpenHelper;
 import com.suda.zph.passwordmanager.entity.PassWord;
+import com.suda.zph.passwordmanager.security.AES;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
@@ -16,11 +18,13 @@ public class IPassWord {
         String sql = "INSERT INTO account (source, user_name, user_password, create_time, mod_time, delete_flag, remarks) " +
                 "VALUES (?,?,?,?,?,?,?)";
         helper = new PassWordOpenHelper(context,"account.db3",1);
+        /*----- 给密码加密 -----*/
+        String code = new AES().AESencryption(passWord.getUser_password());
         helper.getWritableDatabase().execSQL(sql,
                 new String[]{
                         passWord.getSource(),
                         passWord.getUser_name(),
-                        passWord.getUser_password(),
+                        code,
                         df.format(System.currentTimeMillis()),
                         df.format(System.currentTimeMillis()),
                         "0",
@@ -38,7 +42,8 @@ public class IPassWord {
             int id = cursor.getInt(0);
             String  source = cursor.getString(1);
             String user_name = cursor.getString(2);
-            String user_password = cursor.getString(3);
+            /*----- 给密码解密 -----*/
+            String user_password = new AES().AESdecode(cursor.getString(3));
             String create_time = cursor.getString(4);
             String mod_time = cursor.getString(5);
             int delete_flag = cursor.getInt(6);
@@ -54,11 +59,16 @@ public class IPassWord {
         String sql = "select * from account where id = ?";
         Cursor cursor = helper.getReadableDatabase().rawQuery(sql,new String[]{Integer.toString(id)});
         while (cursor.moveToNext()){
+            /*----- 给密码解密 -----*/
+            AES aes = new AES();
+            System.out.println(cursor.getString(3));
+            String pass = aes.AESdecode(cursor.getString(3));
+            System.out.println("pass:"+pass);
             passWord = new PassWord(
                     cursor.getInt(0),
                     cursor.getString(1),
                     cursor.getString(2),
-                    cursor.getString(3),
+                    pass,
                     cursor.getString(4),
                     cursor.getString(5),
                     cursor.getInt(6),
@@ -78,10 +88,12 @@ public class IPassWord {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         helper = new PassWordOpenHelper(context,"account.db3",1);
         String sql = "UPDATE account SET source=?, user_name=?, user_password=?, mod_time=?, remarks=? WHERE (id IS ?);";
+        /*----- 给密码加密 -----*/
+        String code = new AES().AESencryption(passWord.getUser_password());
         helper.getWritableDatabase().execSQL(sql,new String[]{
                 passWord.getSource(),
                 passWord.getUser_name(),
-                passWord.getUser_password(),
+                code,
                 df.format(System.currentTimeMillis()),
                 passWord.getRemarks(),
                 Integer.toString(passWord.getId())

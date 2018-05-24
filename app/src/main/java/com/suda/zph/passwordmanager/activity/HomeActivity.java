@@ -85,7 +85,7 @@ public class HomeActivity extends AppCompatActivity {
 
         }else {
             View view = getWindow().getDecorView();
-            Snackbar.make(view, "add success!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+            Snackbar.make(view, msg, Snackbar.LENGTH_LONG).setAction("Action", null).show();
         }
     }
     @Override

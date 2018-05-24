@@ -15,7 +15,7 @@ public class PassWordOpenHelper extends SQLiteOpenHelper {
                 "id  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
                 "source  TEXT(56) NOT NULL," +
                 "user_name  TEXT(56) NOT NULL," +
-                "user_password  TEXT(56) NOT NULL," +
+                "user_password  TEXT(112) NOT NULL," +
                 "create_time  Date(32) NOT NULL," +
                 "mod_time  Date(32) NOT NULL," +
                 "delete_flag  INTEGER NOT NULL DEFAULT 0," +

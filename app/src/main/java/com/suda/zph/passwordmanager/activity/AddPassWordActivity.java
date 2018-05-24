@@ -47,6 +47,7 @@ public class AddPassWordActivity extends AppCompatActivity {
                     PassWord passWord = new PassWord(add_source.getText().toString(),add_user_name.getText().toString(),add_user_password.getText().toString(),add_remarks.getText().toString());
                     new IPassWord().addPassWord(AddPassWordActivity.this,passWord);
                     Intent intent = new Intent(AddPassWordActivity.this,HomeActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     //传值
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("msg","add success!");
@@ -57,6 +58,7 @@ public class AddPassWordActivity extends AppCompatActivity {
                     passWord.setId(id);
                     new IPassWord().modPassWord(AddPassWordActivity.this,passWord);
                     Intent intent = new Intent(AddPassWordActivity.this,HomeActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     //传值
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("msg","mod success!");
@@ -70,6 +72,5 @@ public class AddPassWordActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         this.finish();
-
     }
 }
